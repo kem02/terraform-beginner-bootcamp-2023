@@ -220,6 +220,13 @@ This will run a plan and pass the changeset to be execute by terraform. Apply sh
 
 If we want to automatically approve an apply we can provide the auto approve flag eg. 	`terraform apply —auto-approve`
 
+#### Terraform Destroy
+
+`terraform destroy`
+This will destroy resources.
+
+You can also use the auto appove flag to skip the approve prompt eg. `terraform apply --auto-approve`
+
 
 ### Terraform Lock Files
 
