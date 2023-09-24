@@ -27,8 +27,9 @@
     + [Terraform State Files](#terraform-state-files)
     + [Terraform Directory](#terraform-directory)
 - [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
+  * [Adding Terraform Alias in the Bash Profile](#adding-terraform-alias-in-the-bash-profile)
 
-## Semantic Versioning :mage:
+## Semantic Versioning
 
 This project is going to utilize semantic versioning for its tagging
 [semver.org](https://semver.org/)
@@ -48,7 +49,7 @@ The Terraform CLI installation instructions have changed due to gpg keyring chan
 
 [Install Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
-### Consideration for Linux Distribution
+### Considerations for Linux Distribution
 
 This project is built against Ubunutu.
 Please consider checking your Linux Distribution and change accordingly to distribution needs.
@@ -92,6 +93,8 @@ This bash script is located here: [.bin/install_terraform_cli](./bin/install_ter
 
 A Shebang (pronounced Sha-bang) tells the bash script what program that will interpret the script. eg. `#!/bin/bash`
 
+ChatGPT recommended this format for bash: `#!/usr/bin/env bash`
+
 - for portablility for different OS distributions
 - will search the user's PATH for the bash executable
 
@@ -125,9 +128,9 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+### Gitpod Lifecycle 
 
-We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
+We need to be careful when using the Init because it will not rerun if we restart an existing workspace. (Before, Init, Command)
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
@@ -141,9 +144,9 @@ We can list out all Environment Variables (Env Vars) using the `env` command
 We can filter specific env vars using grep eg. `env | grep AWS_`
 
 
-#### Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
-In the terminal we can set using `export HELLO=‘World’`
+In the terminal we can set using `export HELLO=‘world’`
 
 In the terminal we unset using `unset HELLO`
 
@@ -157,23 +160,23 @@ Within a bash script we can set env without writing export eg.
 ```sh
 #!/usr/bin/env bash
 
-HELLO=‘World’
+HELLO=‘world’
 
 Echo $HELLO
 ```
 
-#### Printing Vars   
+### Printing Vars   
 
 We can print an env var using echo eg. `echo $HELLO`
 
-#### Scoping of Env Vars
+### Scoping of Env Vars
 
 When you open up new bash terminals in VSCode It will not be aware of env vars that you have set in another window.
 
 If you want Env Vars to persist across all future bash terminals that are open you 
 Need to set env vars in your bash profile. Eg. `.bash_profile`
 
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
 
@@ -186,7 +189,7 @@ All future workspaces launched will set the env vars for all bash terminals open
 You can also set env vars in the `.gitpod.yml` but this can only contain non-sensitive env vars.
 
 
-#### AWS CLI Installation
+### AWS CLI Installation
 
 AWS CLI is installed for the project via the bash script [ `./bin/install_aws_cli`](./bin/install_aws_cli)
 
@@ -256,13 +259,13 @@ This will destroy resources.
 You can also use the auto appove flag to skip the approve prompt eg. `terraform apply --auto-approve`
 
 
-### Terraform Lock Files
+#### Terraform Lock Files
 
 `.terraform.lock.hcl` contains the lock versioning for the providers or modules that should be used with this project.
 
 The Terraform Lock File should be committed to your Version Control System (VSC) eg. Github
 
-### Terraform State Files
+#### Terraform State Files
 
 `.terraform.tfstate` contain information about the current state of your infrastructure. 
 
@@ -274,11 +277,12 @@ If you lose this file, you lose knowing the state of your infrastructure.
 
 `.terraform.tfstate.backup` is the previous state file state.
 
-### Terraform Directory
+#### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers.
 
 
+## Issues with Terraform Cloud Login and Gitpod Workspace
 
 When attempting to run `terraform login` it will launch bash wiswig view to generate a token. However it Dows not work expected in Gitpod VSCode in the browser.
 
@@ -311,7 +315,7 @@ Provide the following code (replace your token in the file):
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
  
 
- ### Adding Terraform Alias (tf) in the Bash Profile
+### Adding Terraform Alias in the Bash Profile
 
 We wanted to set up a bash profile for Terraform so that we can use `tf` in the bash instead of writing out the whole `terraform` command. We used ChatGPT to help us write a script and set it here: [./bin/set_tf_alias 
 ](./bin/set_tf_alias). 
