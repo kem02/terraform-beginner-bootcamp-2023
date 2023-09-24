@@ -283,3 +283,24 @@ Provide the following code (replace your token in the file):
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
  
 
+ ### Adding Terraform Alias (tf) in the Bash Profile
+
+We wanted to set up a bash profile for Terraform so that we can use `tf` in the bash instead of writing out the whole `terraform` command. We used ChatGPT to help us write a script and set it here: [./bin/set_tf_alias 
+](./bin/set_tf_alias). 
+
+Once created, we changed the permission on the file with `chmod u+x ./bin/set_tf_alias`.  Then we add the source into our .gitpod.yml file since it’s a script so that the program can run every time gitpod is loaded as the profile will not persist on shutdown.
+eg. 
+
+```json
+ - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    before: |
+      source ./bin/set_tf_alias 
+      source ./bin/install_aws_cli
+
+```
+
+
+
+
