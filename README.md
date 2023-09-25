@@ -1,5 +1,6 @@
 # Terraform Beginner Bootcamp 2023
 
+![architectural-diagram](https://github.com/kem02/terraform-beginner-bootcamp-2023/assets/113561273/9c0e90e2-1b18-4c89-b034-9797fe277f70)
 
 
 ## Weekly Journals
