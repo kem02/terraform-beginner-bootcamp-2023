@@ -24,7 +24,7 @@ PROJECT_ROOT
 ### Terraform Cloud Variables
 
 In terraform we can set two kind of variables:
-- Enviroment Variables - those you would set in your bash terminal eg. AWS credentials
+- Environment Variables - those you would set in your bash terminal eg. AWS credentials
 - Terraform Variables - those that you would normally set in your tfvars file
 
 We can set Terraform Cloud variables to be sensitive so they are not shown visibly in the UI.
@@ -60,4 +60,4 @@ Allows you can have multiple files that end with auto.tfvars and they will be lo
 
 ### order of terraform variables
 
-- 
+![order-of-variables](https://github.com/kem02/terraform-beginner-bootcamp-2023/assets/113561273/5ea01aca-5563-4184-a521-fbd2b3d49559)
