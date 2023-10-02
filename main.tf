@@ -8,13 +8,13 @@ terraform {
   #   }
   # }
 
-  #  cloud {
-  #   organization = "kem02"
+   cloud {
+    organization = "kem02"
 
-  #   workspaces {
-  #     name = "terra-house-1"
-  #   }
-  # }
+    workspaces {
+      name = "terraform-cloud"
+    }
+  }
 
 
   
