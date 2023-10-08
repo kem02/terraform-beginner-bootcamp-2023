@@ -4,11 +4,16 @@ package main
 
 // fmt is short format, it contains functions for formatted I/O.
 import (
+<<<<<<< HEAD
 	"context"
 	"log"
 	"fmt"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
+=======
+	// "log"
+	"fmt"
+>>>>>>> main
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
@@ -23,6 +28,7 @@ func main() {
 	fmt.Println("Hello, world!")
 }
 
+<<<<<<< HEAD
 
 type Config struct {
 	Endpoint string
@@ -31,12 +37,18 @@ type Config struct {
 }
 
 
+=======
+>>>>>>> main
 // in golang, a titlecase function will get exported.
 func Provider() *schema.Provider {
 	var p *schema.Provider
 	p = &schema.Provider{
 		ResourcesMap:  map[string]*schema.Resource{
+<<<<<<< HEAD
 			"terratowns_home": Resource(),
+=======
+			
+>>>>>>> main
 		},
 		DataSourcesMap:  map[string]*schema.Resource{
 
