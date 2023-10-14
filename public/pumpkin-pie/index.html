@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpkin Pie</title>
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            overflow: auto;
+        }
+
+        #hidden-text {
+            display: none;
+        }
+
+        #show-button {
+            background: rgb(226, 142, 40);
+            border-radius: 990px;
+            box-shadow: rgb(226, 142, 40) 0 10px 20px -10px;
+            box-sizing: border-box;
+            color: #ffffff;
+            cursor: pointer;
+            font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            opacity: 1;
+            outline: 0 solid transparent;
+            padding: 6px 18px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+            margin-left: 4px;
+        }
+
+
+        .center-container {
+            border-color: rgb(255, 177, 88);
+            border-style: solid;
+            padding: 80px;
+            max-height: 90vh;
+            max-width: 60vw;
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 40px;
+            color: white;
+        }
+
+        .parent-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .instructions,
+        .ingredients {
+            min-width: 300px;
+            line-height: 1.5;
+            font-size: 18px;
+
+        }
+
+
+        @media (min-width: 100px) and (max-width: 1017px) {
+            .center-container {
+                max-width: 90vw;
+                max-height: 100vh;
+                padding: 50px;
+                overflow: none;
+            }
+
+            .instructions,
+            .ingredients {
+                margin: 4px;
+                padding: 2px;
+                font-size: 15px;
+            }
+        }
+
+
+
+        @media (min-width: 1018px) and (max-width: 1546px) {
+            .center-container {
+                max-width: 90vw;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="center-container">
+
+        <button id="show-button" onclick="toggleShow()">Click here to view the recipe</button>
+
+        <div id="hidden-text">
+            <div class="top-header">
+                <h1>Pumpkin Pie</h1>
+            </div>
+
+            <div class="parent-container">
+                <div class="ingredients">
+                    <ul>
+                        <li>2 cups of canned pumpkin puree</li>
+                        <li>1/2 cup of granulated sugar</li>
+                        <li>1/4 cup of brown sugar</li>
+                        <li>1/2 teaspoon of salt</li>
+                        <li>1 teaspoon of ground cinnamon</li>
+                        <li>1/2 teaspoon of ground ginger</li>
+                        <li>1/4 teaspoon of ground nutmeg</li>
+                        <li>1/8 teaspoon of ground cloves</li>
+                        <li>2 large eggs</li>
+                        <li>1 cup of evaporated milk</li>
+                        <li>1 pre-made pie crust (9-inch)</li>
+                    </ul>
+
+                </div>
+
+                <div class="instructions">
+                    <ol>
+                        <li>
+                            <strong>Preparation:</strong>
+                            <ul>
+                                <li>Preheat your oven to 425°F (220°C).</li>
+                                <li>Place the pie crust into a 9-inch pie dish and set aside.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Filling:</strong>
+                            <ul>
+                                <li>In a large bowl, combine the pumpkin puree, granulated sugar, brown sugar, salt, and
+                                    spices
+                                    (cinnamon, ginger, nutmeg, and cloves). Mix well.</li>
+                                <li>Beat in the eggs, one at a time, ensuring they are well incorporated.</li>
+                                <li>Gradually stir in the evaporated milk until the mixture is smooth.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Baking:</strong>
+                            <ul>
+                                <li>Pour the filling into the prepared pie crust.</li>
+                                <li>Bake in the preheated oven for 15 minutes.</li>
+                                <li>Reduce the oven temperature to 350°F (175°C) and continue baking for another 40 to
+                                    50
+                                    minutes, or until a knife inserted near the center comes out clean.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Cooling & Serving:</strong>
+                            <ul>
+                                <li>Allow the pie to cool on a wire rack for 2 hours.</li>
+                                <li>You can serve it chilled or at room temperature, with a dollop of whipped cream if
+                                    desired.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script type="text/javascript">
+
+        const images = [
+            "./assets/pumpkin1.jpg",
+            "./assets/pumpkin2.jpg",
+            "./assets/pumpkin3.jpg",
+            "./assets/pumpkin4.jpg",
+            "./assets/pumpkin5.jpg",
+            "./assets/pumpkin6.jpg",
+            "./assets/pumpkin7.jpg",
+            "./assets/pumpkin8.jpg",
+            "./assets/pumpkin9.jpg",
+            "./assets/pumpkin10.jpg",
+            "./assets/pumpkin11.jpg",
+            "./assets/pumpkin12.jpg",
+
+        ];
+
+        const preloadedImages = images.map((image) => {
+            const img = new Image();
+            img.src = image;
+            return img;
+        });
+
+        const toggleShow = () => {
+            const content = document.getElementById("hidden-text");
+            const button = document.getElementById("show-button");
+            content.style.display = "block"
+            button.remove();
+        }
+
+        let currentIndex = 0;
+        const bgContainer = document.body;
+        const transition = document.body;
+
+        function changeBackground() {
+            transition.style.transition = "background-image 2s ease-in"
+            bgContainer.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        changeBackground();
+        setInterval(changeBackground, 8000);
+
+    </script>
+
+</body>
+
+</html>
