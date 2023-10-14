@@ -27,3 +27,11 @@ variable "payday" {
     content_version = number
   })
 }
+
+
+variable "pumpkin" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
+}
